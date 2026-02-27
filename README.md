@@ -37,7 +37,7 @@ Eine User Story/Task gilt als abgeschlossen, wenn:
 - [ ] Deployment Ready: Code läuft in Docker-Container ohne Fehler
 - [ ] Keine kritischen Bugs: Keine bekannten Breaking-Bugs oder Sicherheitslücken
 
-## Sprint 1: Grundlegende Spielmechaniken (Januar - Februar 2026)
+## Sprint 1: Grundlegende Spielmechaniken (Februar - März 2026)
 
 ### Sprint Goal
 Spieler können sich in einer 3D-Welt bewegen und die Client-Server-Kommunikation funktioniert zuverlässig über WebSockets.
@@ -202,5 +202,3 @@ Frontend-Setup:
 - Rust Async Book: https://rust-lang.github.io/async-book/
 - WebSocket Protocol RFC: https://tools.ietf.org/html/rfc6455
 - Game Networking Resources: https://gafferongames.com/
-
-Letzte Aktualisierung: Sprint 1 Planning - Januar 2026
