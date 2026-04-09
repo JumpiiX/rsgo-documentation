@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Was lief gut -->
+  <rect x="20" y="20" width="140" height="120" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2" rx="5"/>
+  <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">Was lief gut</text>
+  <text x="30" y="60" font-family="Arial, sans-serif" font-size="10">• WebSocket Performance</text>
+  <text x="30" y="75" font-family="Arial, sans-serif" font-size="10">• Three.js Integration</text>
+  <text x="30" y="90" font-family="Arial, sans-serif" font-size="10">• Multiplayer Sync</text>
+  <text x="30" y="105" font-family="Arial, sans-serif" font-size="10">• 60 FPS stabil</text>
+  <text x="30" y="120" font-family="Arial, sans-serif" font-size="10">• Foundation komplett</text>
+  
+  <!-- Challenges -->
+  <rect x="180" y="20" width="140" height="120" fill="#FFF3E0" stroke="#FF9800" stroke-width="2" rx="5"/>
+  <text x="250" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#E65100">Challenges</text>
+  <text x="190" y="60" font-family="Arial, sans-serif" font-size="10">• WebSocket ws/wss Bug</text>
+  <text x="190" y="75" font-family="Arial, sans-serif" font-size="10">• Mouse Sensitivity</text>
+  <text x="190" y="90" font-family="Arial, sans-serif" font-size="10">• Collision Detection</text>
+  <text x="190" y="105" font-family="Arial, sans-serif" font-size="10">• Pointer Lock API</text>
+  <text x="190" y="120" font-family="Arial, sans-serif" font-size="10">• Tickrate Optimierung</text>
+  
+  <!-- Learnings -->
+  <rect x="340" y="20" width="140" height="120" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" rx="5"/>
+  <text x="410" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">Learnings</text>
+  <text x="350" y="60" font-family="Arial, sans-serif" font-size="10">• 20Hz = Sweet Spot</text>
+  <text x="350" y="75" font-family="Arial, sans-serif" font-size="10">• Client Prediction</text>
+  <text x="350" y="90" font-family="Arial, sans-serif" font-size="10">• Browser Gaming OK</text>
+  <text x="350" y="105" font-family="Arial, sans-serif" font-size="10">• Raycasting wichtig</text>
+  <text x="350" y="120" font-family="Arial, sans-serif" font-size="10">• Foundation first</text>
+  
+  <!-- Sprint 1 Summary -->
+  <rect x="20" y="160" width="460" height="60" fill="#F5F5F5" stroke="#999" stroke-width="1" rx="5"/>
+  <text x="250" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Sprint 1 Fazit</text>
+  <text x="250" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">Von "mal schauen ob's geht" zu "Holy Shit, es funktioniert!"</text>
+  <text x="250" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Spielbares Multiplayer-Game im Browser erreicht</text>
+</svg>

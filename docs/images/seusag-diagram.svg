@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400">
+  <!-- Externe Umgebung -->
+  <ellipse cx="350" cy="225" rx="330" ry="210" fill="#F5E6D3" stroke="#D2691E" stroke-width="3"/>
+  <text x="350" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8B4513">Externe Umgebung</text>
+  
+  <!-- Hetzner Server / Docker Container -->
+  <ellipse cx="350" cy="225" rx="250" ry="150" fill="#E6F3FF" stroke="#4682B4" stroke-width="2"/>
+  <text x="350" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2F4F4F">Hetzner Server / Docker Container</text>
+  
+  <!-- Backend (Rust Server) -->
+  <ellipse cx="290" cy="180" rx="70" ry="40" fill="#FFB347" stroke="#FF8C00" stroke-width="2"/>
+  <text x="290" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Rust Backend</text>
+  <text x="290" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">WebSocket Server</text>
+  <text x="290" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Game State Manager</text>
+  
+  <!-- Frontend (Static Files) -->
+  <ellipse cx="410" cy="180" rx="70" ry="40" fill="#98FB98" stroke="#32CD32" stroke-width="2"/>
+  <text x="410" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Static Frontend</text>
+  <text x="410" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Three.js App</text>
+  <text x="410" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">HTML/JS/CSS</text>
+  
+  <!-- Docker Container Info -->
+  <rect x="230" y="280" width="240" height="70" fill="#E0FFE0" stroke="#228B22" stroke-width="1" rx="5"/>
+  <text x="350" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#006400">Docker Deployment</text>
+  <text x="350" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">1. Rust Server auf Port 6969</text>
+  <text x="350" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">2. Static Files auf Port 80</text>
+  <text x="350" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">3. WebSocket Verbindungen</text>
+  <text x="350" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">4. Real-time Game Updates</text>
+  
+  <!-- Browser/Spieler -->
+  <rect x="50" y="140" width="70" height="50" fill="#FFD700" stroke="#FF8C00" stroke-width="2" rx="5"/>
+  <text x="85" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Browser</text>
+  <text x="85" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Spieler 1</text>
+  
+  <rect x="50" y="210" width="70" height="50" fill="#FFD700" stroke="#FF8C00" stroke-width="2" rx="5"/>
+  <text x="85" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Browser</text>
+  <text x="85" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Spieler 2</text>
+  
+  <!-- GitHub/Entwicklung -->
+  <rect x="570" y="140" width="70" height="50" fill="#FF6B6B" stroke="#DC143C" stroke-width="2" rx="5"/>
+  <text x="605" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">GitHub</text>
+  <text x="605" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Repository</text>
+  
+  <!-- Docker Hub -->
+  <rect x="570" y="210" width="70" height="50" fill="#87CEEB" stroke="#4682B4" stroke-width="2" rx="5"/>
+  <text x="605" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Docker Hub</text>
+  <text x="605" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Images</text>
+  
+  <!-- Verbindungen -->
+  <!-- Browser 1 zu Backend (WebSocket) -->
+  <line x1="120" y1="165" x2="220" y2="170" stroke="#FF4500" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="170" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#FF4500">WebSocket</text>
+  
+  <!-- Browser 2 zu Backend (WebSocket) -->
+  <line x1="120" y1="235" x2="220" y2="190" stroke="#FF4500" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="170" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#FF4500">WebSocket</text>
+  
+  <!-- Frontend zu Backend (interne Kommunikation) -->
+  <path d="M 340 180 Q 350 160 360 180" fill="none" stroke="#4682B4" stroke-width="2"/>
+  <text x="350" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4682B4">intern</text>
+  
+  <!-- GitHub zu Docker -->
+  <line x1="570" y1="165" x2="470" y2="175" stroke="#DC143C" stroke-width="2"/>
+  <text x="520" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#DC143C">CI/CD</text>
+  
+  <!-- Docker Hub zu Container -->
+  <line x1="570" y1="235" x2="470" y2="195" stroke="#4682B4" stroke-width="2"/>
+  <text x="520" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4682B4">Deploy</text>
+</svg>

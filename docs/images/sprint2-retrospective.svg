@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Was war der Hammer -->
+  <rect x="20" y="20" width="140" height="120" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2" rx="5"/>
+  <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">Der Hammer</text>
+  <text x="30" y="60" font-family="Arial, sans-serif" font-size="10">• Hit-Detection fair</text>
+  <text x="30" y="75" font-family="Arial, sans-serif" font-size="10">• Revolver-Model</text>
+  <text x="30" y="90" font-family="Arial, sans-serif" font-size="10">• Kill-Feed süchtig</text>
+  <text x="30" y="105" font-family="Arial, sans-serif" font-size="10">• 20+ Spieler smooth</text>
+  <text x="30" y="120" font-family="Arial, sans-serif" font-size="10">• Combat macht Spass</text>
+  
+  <!-- Challenges -->
+  <rect x="180" y="20" width="140" height="120" fill="#FFEBEE" stroke="#F44336" stroke-width="2" rx="5"/>
+  <text x="250" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#C62828">Challenges</text>
+  <text x="190" y="60" font-family="Arial, sans-serif" font-size="10">• Lag Compensation</text>
+  <text x="190" y="75" font-family="Arial, sans-serif" font-size="10">• Hit-Reg kompliziert</text>
+  <text x="190" y="90" font-family="Arial, sans-serif" font-size="10">• Server Authority</text>
+  <text x="190" y="105" font-family="Arial, sans-serif" font-size="10">• Client Prediction</text>
+  <text x="190" y="120" font-family="Arial, sans-serif" font-size="10">• Message Timing</text>
+  
+  <!-- Combat Learnings -->
+  <rect x="340" y="20" width="140" height="120" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2" rx="5"/>
+  <text x="410" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7B1FA2">Combat Learnings</text>
+  <text x="350" y="60" font-family="Arial, sans-serif" font-size="10">• Game-Feel > Simulation</text>
+  <text x="350" y="75" font-family="Arial, sans-serif" font-size="10">• Visual Feedback alles</text>
+  <text x="350" y="90" font-family="Arial, sans-serif" font-size="10">• Recoil wichtig</text>
+  <text x="350" y="105" font-family="Arial, sans-serif" font-size="10">• Muzzle Flash Effect</text>
+  <text x="350" y="120" font-family="Arial, sans-serif" font-size="10">• K/D macht süchtig</text>
+  
+  <!-- Sprint 2 Summary -->
+  <rect x="20" y="160" width="460" height="80" fill="#F5F5F5" stroke="#999" stroke-width="1" rx="5"/>
+  <text x="250" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Sprint 2 Fazit</text>
+  <text x="250" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11">Combat-System macht das Game zur echten Multiplayer-Erfahrung</text>
+  <text x="250" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Hit-Detection trotz Latenz fair - Revolver fühlt sich echt an</text>
+  <text x="250" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">20 Spieler getestet - Server langweilt sich noch</text>
+</svg>

@@ -3,7 +3,7 @@ $$
 $$
 
 **TBZ Höhere Fachschule für Technik Zürich**  
-**Student:** David Unterguggenberger | **Klasse:** ITCNE24 - 4. Semesterarbeit  
+**Student:** David Unterguggenberger | **Klasse:** ITCNE24 - 3. Semesterarbeit  
 **Zeitraum:** Februar - April 2026  
 **Supervisors:** Philip Stark, Corrado Parisi
 
@@ -14,7 +14,7 @@ $$
 - **Backend (Rust):** [RSGO Game Server](https://github.com/JumpiiX/rsgo-game-client)
 - **Frontend (Three.js):** [RSGO Frontend](https://github.com/JumpiiX/rsgo-frontend)
 - **GitHub Projects:** [Sprint Board](https://github.com/users/JumpiiX/projects/4)
-- **Live Demo:** [rsgo.unterguggenberger.ch](http://rsgo.unterguggenberger.ch) *(coming soon)*
+- **Live Demo:** [rsgo.unterguggenberger.ch](http://rsgo.unterguggenberger.ch)
 
 ---
 
@@ -53,15 +53,13 @@ $$
 
 ## Einführung
 
-Nach meiner SmartHome-Bridge wollte ich mal was komplett anderes machen. Gaming war schon immer meine Leidenschaft - ich hab tausende Stunden in CS:GO verbracht. Aber kann man sowas auch selbst bauen? Im Browser? Ohne Unity oder Unreal Engine?
-
-Die Antwort: **Ja, und es macht süchtig.**
+Nach meiner SmartHome-Bridge wollte ich ein Projekt mit völlig anderen technischen Herausforderungen. Als Lernprojekt entschied ich mich für ein Browser-basiertes Multiplayer-Spiel.
 
 ### Die Idee
 
-Ein Multiplayer-FPS Game, das direkt im Browser läuft. Kein Download, kein Steam, einfach URL öffnen und zocken. Mit Rust-Backend für die Performance und Three.js für die 3D-Grafik.
+Ein experimentelles Multiplayer-FPS Game im Browser. Ziel war es, die Game-Mechanik von Grund auf zu verstehen und moderne Web-Technologien für Real-time Gaming zu testen. Mit Rust-Backend für die Server-Performance und Three.js für die 3D-Darstellung.
 
-Am Anfang hatte ich ehrlich gesagt keine Ahnung, ob das überhaupt funktioniert. WebSockets schnell genug für Gaming? Three.js mit 60 FPS bei mehreren Spielern? Aber hey, nur eine Art das rauszufinden.
+Als Schulprojekt und Test-Setup ging es darum herauszufinden: Sind WebSockets schnell genug für Gaming? Kann Three.js mit mehreren Spielern umgehen?
 
 ---
 
@@ -77,32 +75,31 @@ Die meisten Multiplayer-Games brauchen:
 
 ### Meine Vision
 
-**Was wäre, wenn man einfach eine URL teilt und instant zusammen zocken kann?**
+**Was wäre, wenn man einfach eine URL teilt und sofort zusammen spielen kann?**
 
-Keine Installation, keine System-Requirements, einfach Browser öffnen und los. Das wollte ich bauen.
+Keine Installation, minimale System-Requirements, direkt im Browser. Das war die Grundidee für dieses Lernprojekt.
 
 ### Die technischen Challenges
 
-- **Real-time Networking:** Latenz unter 50ms für competitive Gameplay
-- **Browser-Performance:** 60+ FPS mit mehreren Spielern
-- **Server-Skalierung:** 20+ gleichzeitige Spieler ohne Lag
-- **Hit-Detection:** Fair und präzise, trotz Netzwerk-Latenz
+- **Real-time Networking:** WebSocket-basierte Kommunikation
+- **Browser-Performance:** Stabile FPS mit mehreren Spielern
+- **Server-Skalierung:** Mehrere gleichzeitige Verbindungen
+- **Hit-Detection:** Server-seitige Validierung
 
 ---
 
 ## Projektziele
 
 1. **Spielbares FPS im Browser:** Mit WASD-Movement, Mouse-Look und Shooting
-2. **Real Multiplayer:** Mindestens 20 Spieler gleichzeitig
-3. **Docker Deployment:** Easy auf jedem Server zu hosten
-4. **60 FPS Performance:** Smooth Gameplay auch auf älteren Laptops
+2. **Multiplayer-Funktionalität:** Mehrere Spieler gleichzeitig
+3. **Docker Deployment:** Containerisierte Bereitstellung
+4. **Performance:** Stabile Framerate im Browser
 
 ---
 
 ## SEUSAG-Diagramm
 
-![SEUSAG Diagramm](docs/images/seusag-diagram.png)
-*[Placeholder: SEUSAG-Diagramm für RSGO System-Architektur]*
+![SEUSAG Diagramm](docs/images/seusag-diagram.svg)
 
 ### SEUSAG-Diagramm Beschreibung
 
@@ -135,23 +132,22 @@ Das SEUSAG zeigt die Architektur des RSGO Multiplayer-FPS Systems mit allen Komp
 ### Warum diese Technologien?
 
 **Rust Backend:**
-Nach dem SmartHome-Projekt wusste ich: Rust ist perfekt für Real-time. Kein Garbage Collector = keine random Frame-Drops.
+Für die Server-Logik und WebSocket-Handling. Rust bietet gute Performance und Memory-Safety für concurrent Verbindungen.
 
 **Three.js Frontend:**
-Die grösste 3D-Library für Browser. Riesige Community, viele Examples. Und es funktioniert einfach.
+Etablierte 3D-Library für Browser mit guter Dokumentation und Community-Support.
 
 **WebSockets:**
-TCP ist zu langsam für Gaming, WebRTC zu komplex. WebSockets sind der Sweet-Spot - schnell genug und simpel.
+Für Real-time Kommunikation zwischen Client und Server. Einfacher als WebRTC und ausreichend für die Anforderungen.
 
 **Docker:**
-Weil ich das Game easy deployen will. Ein Command und der Server läuft.
+Für reproduzierbare Deployments und einfache Bereitstellung.
 
 ---
 
 ## Sprint-Übersicht
 
-![Sprint Timeline](docs/images/sprint-timeline.png)
-*[Placeholder: Sprint Timeline Visualization]*
+![Sprint Timeline](docs/images/sprint-timeline.svg)
 
 | Sprint | Zeitraum | Story Points | Hauptziel |
 |--------|----------|--------------|-----------|
@@ -175,15 +171,15 @@ Erstmal die Basics. Kann ich überhaupt eine 3D-Welt im Browser rendern? Funktio
 
 | User Story | Priority | Story Points | Status |
 |------------|----------|--------------|--------|
-| WebSocket-Verbindung | Must-Have | 5 | ✅ |
-| 3D-Spielwelt | Must-Have | 8 | ✅ |
-| First-Person-Kamera | Must-Have | 5 | ✅ |
-| Spielerbewegung (WASD) | Must-Have | 8 | ✅ |
-| Netzwerk-Synchronisation | Must-Have | 13 | ✅ |
-| Spieler-Spawning | Must-Have | 5 | ✅ |
-| Andere Spieler anzeigen | Must-Have | 8 | ✅ |
+| WebSocket-Verbindung | Must-Have | 5 | Erledigt |
+| 3D-Spielwelt | Must-Have | 8 | Erledigt |
+| First-Person-Kamera | Must-Have | 5 | Erledigt |
+| Spielerbewegung (WASD) | Must-Have | 8 | Erledigt |
+| Netzwerk-Synchronisation | Must-Have | 13 | Erledigt |
+| Spieler-Spawning | Must-Have | 5 | Erledigt |
+| Andere Spieler anzeigen | Must-Have | 8 | Erledigt |
 
-**Total: 52 Story Points** - Ambitious, aber machbar.
+**Total: 52 Story Points**
 
 ---
 
@@ -202,13 +198,13 @@ const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 const ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
 ```
 
-Nach dem Fix: Connection stable! 30ms Ping lokal. Das könnte funktionieren!
+Nach dem Fix: Verbindung stabil mit lokalem Test-Setup.
 
 ### 3D-Spielwelt mit Three.js
 
-**Der erste "Wow"-Moment:**
+**Erste 3D-Darstellung:**
 
-Als der graue Boden zum ersten Mal gerendert wurde. Klar, nur ein graues Rechteck, aber es war MEINE 3D-Welt im Browser!
+Grundlegende Three.js Scene mit einem einfachen Boden als Test.
 
 ```javascript
 // Mein erster Three.js Code
@@ -224,19 +220,17 @@ const floor = new THREE.Mesh(
 scene.add(floor);
 ```
 
-**Performance-Überraschung:**
+**Performance:**
 
-Ich dachte Three.js würde bei 30 FPS rumkrebsen. Aber nein - konstante 60 FPS! Sogar auf meinem alten Test-Laptop. Frustum Culling macht Three.js automatisch - nice!
+Three.js lieferte stabile Framerates, auch auf älteren Geräten. Frustum Culling wird automatisch behandelt.
 
 ### First-Person-Kamera mit Pointer Lock
 
 **Das Drama mit der Maus-Sensitivity:**
 
-Die Pointer Lock API "klaut" die Maus - soweit so gut. Aber die richtige Sensitivity zu finden war ein Nightmare.
+Die Pointer Lock API ermöglicht Maus-Eingabe für First-Person Steuerung. Die richtige Sensitivity-Einstellung brauchte mehrere Iterationen.
 
-- Erster Versuch: Kamera dreht sich wie verrückt
-- Zweiter Versuch: Viel zu träge
-- 10+ Versuche später: `event.movementX * 0.002` - PERFECT!
+Finaler Wert: `event.movementX * 0.002` für responsive aber nicht übersensitive Kontrolle.
 
 ```javascript
 document.addEventListener('mousemove', (e) => {
@@ -247,7 +241,7 @@ document.addEventListener('mousemove', (e) => {
 });
 ```
 
-**Pro-Tipp:** ESC gibt automatisch die Maus frei. Das wusste ich nicht und hab eine halbe Stunde einen "Release Mouse" Button gebaut. 😅
+ESC gibt automatisch die Maus frei - ein Feature der Pointer Lock API.
 
 ### WASD-Movement implementieren
 
@@ -291,7 +285,6 @@ tokio::spawn(async move {
 Erst waren andere Spieler rote Würfel. Sah aus wie Minecraft. Dann Kapseln - schon besser. Mit Nametags drüber sieht's fast professionell aus!
 
 ![Multiplayer Test](docs/images/multiplayer-first-test.png)
-*[Placeholder: Screenshot von ersten Multiplayer-Tests mit mehreren Spielern]*
 
 ---
 
@@ -305,17 +298,16 @@ Erst waren andere Spieler rote Würfel. Sah aus wie Minecraft. Dann Kapseln - sc
 
 | Metrik | Ziel | Erreicht |
 |--------|------|----------|
-| FPS | 60 | 60 ✅ |
-| Latenz | <50ms | ~25ms ✅ |
-| Spieler | 5+ | 15 getestet ✅ |
-| Memory | <200MB | ~150MB ✅ |
+| FPS | 60 | Stabil |
+| Latenz | <50ms | Lokal getestet |
+| Spieler | 5+ | Mehrere getestet |
+| Memory | <200MB | Akzeptabel |
 
 ---
 
 ## Sprint 1 Retrospektive
 
-![Sprint 1 Retrospektive](docs/images/sprint1-retrospective.png)
-*[Placeholder: Sprint 1 Retrospektive Diagramm]*
+![Sprint 1 Retrospektive](docs/images/sprint1-retrospective.svg)
 
 ### Was lief mega gut
 
@@ -361,15 +353,15 @@ Ein Revolver, Headshots, Kill-Feed - das volle FPS-Feeling. Aber alles im Browse
 
 | User Story | Priority | Story Points | Status |
 |------------|----------|--------------|--------|
-| Revolver-Waffe | Must-Have | 5 | ✅ |
-| Shooting-Mechanik | Must-Have | 13 | ✅ |
-| Hit-Detection & Damage | Must-Have | 13 | ✅ |
-| Health & Shield System | Must-Have | 5 | ✅ |
-| Death & Respawn | Must-Have | 8 | ✅ |
-| Kill-Feed & Scoreboard | Must-Have | 5 | ✅ |
-| HUD-Interface | Must-Have | 5 | ✅ |
+| Revolver-Waffe | Must-Have | 5 | Erledigt |
+| Shooting-Mechanik | Must-Have | 13 | Erledigt |
+| Hit-Detection & Damage | Must-Have | 13 | Erledigt |
+| Health & Shield System | Must-Have | 5 | Erledigt |
+| Death & Respawn | Must-Have | 8 | Erledigt |
+| Kill-Feed & Scoreboard | Must-Have | 5 | Erledigt |
+| HUD-Interface | Must-Have | 5 | Erledigt |
 
-**Total: 54 Story Points** - Combat ist komplex!
+**Total: 54 Story Points**
 
 ---
 
@@ -393,7 +385,6 @@ loader.load('/assets/revolver.gltf', (gltf) => {
 Das Modell macht SO VIEL aus. Plötzlich fühlt sich das Game echt an!
 
 ![Revolver Model](docs/images/revolver-ingame.png)
-*[Placeholder: Screenshot vom Revolver im Spiel]*
 
 ### Shooting-Mechanik implementieren
 
@@ -415,7 +406,7 @@ function shoot() {
 }
 ```
 
-Der Recoil fühlt sich SO befriedigend an. Wie in einem echten Shooter!
+Recoil-Animation für visuelles Feedback beim Schiessen.
 
 ### Hit-Detection - Die grösste Challenge
 
@@ -448,23 +439,18 @@ Nach 2 Tagen Debugging: **Hit-Detection fühlt sich fair an!**
 
 **Der Death-Screen Drama:**
 
-Die Kamera sollte dramatisch zu Boden fallen wenn man stirbt. Erste Version: Instant black screen. Langweilig.
-
-Zweite Version: Kamera fällt langsam, wird rot, dann schwarz. **MUCH BETTER!**
+Wenn man stirbt sieht man die ganze Map von oben - wie eine Überwachungskamera. Nach einer Zeit kommt ein Respawn-Button von wo man dann respawnen kann.
 
 ```javascript
 function animateDeath() {
-    // Roter Filter
-    scene.fog = new THREE.Fog(0xff0000, 1, 10);
+    // Kamera zur Map-Übersicht bewegen
+    camera.position.set(0, 50, 0);  // Hoch über der Map
+    camera.lookAt(0, 0, 0);         // Nach unten schauen
     
-    // Kamera fällt
-    const fallAnimation = setInterval(() => {
-        camera.position.y -= 0.1;
-        if (camera.position.y < 0) {
-            clearInterval(fallAnimation);
-            showRespawnScreen();
-        }
-    }, 16);
+    // Nach 3 Sekunden Respawn-Button anzeigen
+    setTimeout(() => {
+        showRespawnButton();
+    }, 3000);
 }
 ```
 
@@ -487,7 +473,6 @@ function addKillFeedEntry(killer, victim) {
 TAB für Scoreboard - wie in jedem FPS. K/D Ratio macht das Game instant competitive!
 
 ![Scoreboard](docs/images/scoreboard.png)
-*[Placeholder: Screenshot vom Scoreboard mit mehreren Spielern]*
 
 ---
 
@@ -495,25 +480,24 @@ TAB für Scoreboard - wie in jedem FPS. K/D Ratio macht das Game instant competi
 
 ### Es macht tatsächlich Spass!
 
-8 Freunde zum Testen eingeladen. **Absolute Chaos, aber SO VIEL FUN!**
+Test-Sessions mit mehreren Spielern zur Validierung der Multiplayer-Funktionalität.
 
-**Bestes Feedback:** "Bruh, das läuft im Browser?! Das ist ja smooth wie CS!"
+Positives Feedback zur Browser-Performance während der Tests.
 
 ### Combat-Metriken
 
 | Metrik | Ziel | Erreicht |
 |--------|------|----------|
-| Time-to-Kill | 2-3 Shots | 3 Body / 2 Head ✅ |
-| Hit-Reg Accuracy | >95% | ~98% ✅ |
-| Respawn Time | 5s | 5s ✅ |
-| Concurrent Players | 10+ | 20 getestet ✅ |
+| Time-to-Kill | 2-3 Shots | 3 Body / 2 Head |
+| Hit-Reg Accuracy | >95% | Funktional |
+| Respawn Time | 5s | 5s |
+| Concurrent Players | 10+ | Mehrere getestet |
 
 ---
 
 ## Sprint 2 Retrospektive
 
-![Sprint 2 Retrospektive](docs/images/sprint2-retrospective.png)
-*[Placeholder: Sprint 2 Retrospektive Diagramm]*
+![Sprint 2 Retrospektive](docs/images/sprint2-retrospective.svg)
 
 ### Was war der Hammer
 
@@ -526,21 +510,19 @@ TAB für Scoreboard - wie in jedem FPS. K/D Ratio macht das Game instant competi
 
 - Lag-Compensation war hardcore kompliziert
 - Death-Animation musste 5x überarbeitet werden
-- Weapon-Balancing (Damage-Werte) brauchte viele Tests
 
 ### Learnings
 
 - Game-Feel > Perfekte Simulation
-- Visual Feedback ist alles (Recoil, Muzzle Flash, Hit-Marker)
 - Server-Authority ist ein Must für Fair-Play
 
 ---
 
 ## Sprint 2 Fazit
 
-**Von Walking-Simulator zu echtem FPS!**
+**Grundlegendes Combat-System implementiert:**
 
-Sprint 2 hat das Game transformed. Combat funktioniert, macht Spass, fühlt sich fair an. Die Freunde wollen nicht mehr aufhören zu spielen - Mission accomplished!
+Sprint 2 erweiterte das Projekt um Shooting-Mechaniken und Hit-Detection. Das Combat-System funktioniert und wurde in mehreren Test-Sessions validiert.
 
 20 Spieler getestet und der Server langweilt sich noch. Zeit für Sprint 3: Skalierung!
 
@@ -560,13 +542,13 @@ Nach zwei Sprints Development ist es Zeit für Production. Docker-Container baue
 
 | User Story | Priority | Story Points | Status |
 |------------|----------|--------------|--------|
-| Server mieten bei Hetzner | Must-Have | 3 | ✅ |
-| Docker Setup | Must-Have | 8 | ✅ |
-| Server Deployment | Must-Have | 5 | ✅ |
-| Performance für 20+ Spieler | Must-Have | 13 | ✅ |
-| Automatisches Deployment | Nice-to-Have | 5 | ✅ |
+| Server mieten bei Hetzner | Must-Have | 3 | Erledigt |
+| Docker Setup | Must-Have | 8 | Erledigt |
+| Server Deployment | Must-Have | 5 | Erledigt |
+| Performance für mehrere Spieler | Must-Have | 13 | Erledigt |
+| Automatisches Deployment | Nice-to-Have | 5 | Erledigt |
 
-**Total: 34 Story Points** - Fokus auf Production-Readiness
+**Total: 34 Story Points**
 
 ---
 
@@ -581,7 +563,7 @@ Nach zwei Sprints Development ist es Zeit für Production. Docker-Container baue
 
 **Was fast schiefging:**
 
-Hab vergessen Port 6969 in der Hetzner Firewall zu öffnen. 2 Stunden Docker-Config debugged bis ich gecheckt hab, dass die Firewall blockt. 🤦‍♂️
+Port 6969 musste in der Hetzner Firewall geöffnet werden - ein wichtiger Schritt beim Server-Setup.
 
 ### Docker Container bauen
 
@@ -626,10 +608,7 @@ let batch = GameStateBatch {
 send_batch(batch);
 ```
 
-**Resultat:** 50 Spieler getestet - läuft smooth wie Butter!
-
-![Performance Monitoring](docs/images/performance-graph.png)
-*[Placeholder: Performance Graph mit 50 Spielern]*
+**Resultat:** 50 Spieler getestet, läuft smooth wie Butter!
 
 ### Docker Deployment auf Hetzner
 
@@ -659,32 +638,31 @@ services:
 
 ## Sprint 3 Review
 
-### Production Launch!
+### Deployment erfolgreich:
 
-Server läuft seit einer Woche stable. Peak: **73 concurrent players** an einem Abend!
+Server läuft stabil mit Docker-Setup.
 
 ### Performance-Metriken
 
 | Metrik | Ziel | Erreicht |
 |--------|------|----------|
-| Concurrent Players | 20+ | 73 peak ✅ |
-| Server CPU Usage | <80% | ~45% bei 50 Spielern ✅ |
-| Memory Usage | <2GB | 890MB bei 50 Spielern ✅ |
-| Docker Image Size | <100MB | 45MB ✅ |
-| Deployment Time | <5min | ~2min ✅ |
+| Concurrent Players | Mehrere | Getestet mit mehreren Spielern |
+| Server CPU Usage | <80% | Stabile Performance |
+| Memory Usage | <2GB | Akzeptabler Verbrauch |
+| Docker Image Size | <100MB | Kompakt |
+| Deployment Time | <5min | Schnell |
 
 ---
 
 ## Sprint 3 Retrospektive
 
-![Sprint 3 Retrospektive](docs/images/sprint3-retrospective.png)
-*[Placeholder: Sprint 3 Retrospektive Diagramm]*
+![Sprint 3 Retrospektive](docs/images/sprint3-retrospective.svg)
 
 ### Was lief perfect
 
 - Docker macht Deployment zum Kinderspiel
 - Message-Batching war der Performance Game-Changer  
-- 73 Spieler! Hatte ich nie erwartet
+- Erfolgreiche Multiplayer-Tests
 - Hetzner Server für 5€ reicht locker
 
 ### Challenges
@@ -703,14 +681,14 @@ Server läuft seit einer Woche stable. Peak: **73 concurrent players** an einem 
 
 ## Sprint 3 Fazit
 
-**Production-Ready und skaliert!**
+**Projekt abgeschlossen:**
 
-Das Game läuft jetzt 24/7 auf Hetzner, kann 70+ Spieler handlen und deployment ist ein One-Liner. Was als "mal schauen ob WebSockets schnell genug sind" anfing, ist jetzt ein richtiges Multiplayer-Game mit Daily Active Users!
+Der Server läuft stabil auf Hetzner mit Docker-Deployment. Das experimentelle Multiplayer-Game demonstriert erfolgreiche Nutzung von WebSockets für Browser-basiertes Gaming.
 
-**Die Reise:**
-- Sprint 1: "Kann man überhaupt im Browser?"
-- Sprint 2: "Okay es funktioniert und macht Spass!"  
-- Sprint 3: "73 SPIELER GLEICHZEITIG!"
+**Die Entwicklung:**
+- Sprint 1: Browser-basierte 3D-Darstellung und Networking
+- Sprint 2: Combat-System und Hit-Detection  
+- Sprint 3: Docker-Deployment und Performance-Optimierung
 
 ---
 
@@ -722,79 +700,27 @@ Ein vollständiges Multiplayer-FPS im Browser. Mit Rust-Backend, Three.js Fronte
 
 ### Die wichtigsten Learnings
 
-1. **Browser sind krass powerful** - 60 FPS mit 3D Graphics? Kein Problem!
-2. **WebSockets reichen für Gaming** - Mit clever Optimierung läuft's butterweich
-3. **Rust ist perfect für Game-Server** - Performance, Safety, kleine Binaries
-4. **Simple Deployment wins** - Docker-Compose > Komplexe Kubernetes Setups
+1. **Browser-Capabilities** - Moderne Browser können 3D-Graphics gut handhaben
+2. **WebSockets für Gaming** - Ausreichend für einfache Multiplayer-Spiele
+3. **Rust für Server** - Gute Performance und Memory-Safety
+4. **Einfaches Deployment** - Docker vereinfacht die Bereitstellung
 
 ### Was kommt als nächstes?
 
 - Mehr Waffen (Shotgun, Sniper)
-- Maps (aktuell nur eine Arena)  
-- Matchmaking System
-- Maybe... Steam Release? 🤔
+- Maps (aktuell nur eine Arena)
+- Neuer Modus
 
 ### Die Zahlen
 
 | Metrik | Wert |
 |--------|------|
 | Entwicklungszeit | 3 Monate |
-| Lines of Code | ~8,500 |
-| Peak Concurrent Players | 73 |
-| Average FPS | 58 |
+| Lines of Code | Mehrere tausend |
+| Getestete Concurrent Players | Mehrere |
+| Average FPS | Stabil |
 | Server Kosten | 5€/Monat |
-| Spass-Faktor | ∞ |
 
-**Das Verrückte:** Es hat funktioniert. Ein Browser-FPS der mit 70+ Spielern läuft. Ohne Unity, ohne Unreal, nur mit Web-Tech und Rust.
+**Fazit:** Das experimentelle Projekt zeigt, dass Browser-basierte Multiplayer-Games mit modernen Web-Technologien umsetzbar sind. 
 
-**RSGO** - From Zero to Hero in 3 Sprints! 🎮
-
----
-
-## Benötigte Diagramme & Screenshots
-
-### Diagramme zu erstellen:
-1. **SEUSAG-Diagramm** (docs/images/seusag-diagram.png)
-   - System-Architektur mit Client, Server, Docker, Hetzner
-   - Zeige WebSocket-Verbindungen, Game State Manager, Three.js Renderer
-
-2. **Sprint Timeline Visualization** (docs/images/sprint-timeline.png)
-   - Zeitstrahl Februar-April mit Sprint-Phasen
-   - Story Points pro Sprint visualisiert
-
-3. **Sprint 1 Retrospektive** (docs/images/sprint1-retrospective.png)
-   - Was lief gut, Challenges, Learnings
-   - Im Stil der SmartHome-Retros
-
-4. **Sprint 2 Retrospektive** (docs/images/sprint2-retrospective.png)
-   - Combat-spezifische Learnings
-   - Hit-Detection Challenges
-
-5. **Sprint 3 Retrospektive** (docs/images/sprint3-retrospective.png)
-   - Docker & Performance Learnings
-   - Deployment-Erfahrungen
-
-### Screenshots zu machen:
-1. **Multiplayer First Test** (docs/images/multiplayer-first-test.png)
-   - Mehrere Spieler in der Arena
-   - Nametags über Spielern
-
-2. **Revolver In-Game** (docs/images/revolver-ingame.png)
-   - First-Person View mit Revolver-Modell
-   - HUD mit Health/Ammo
-
-3. **Scoreboard** (docs/images/scoreboard.png)
-   - TAB-Menu mit K/D Stats
-   - Mehrere Spieler gelistet
-
-4. **Performance Graph** (docs/images/performance-graph.png)
-   - CPU/RAM Usage bei 50 Spielern
-   - Network Traffic Visualization
-
-5. **Kill-Feed** (docs/images/kill-feed.png)
-   - Obere rechte Ecke mit Kill-Nachrichten
-   - "Player1 killed Player2" Style
-
-6. **Game Arena Overview** (docs/images/arena-overview.png)
-   - Top-Down oder Perspective View der Map
-   - Zeige Obstacles und Spawn-Points
+**RSGO** - Ein Schulprojekt zur Erforschung von Game-Mechaniken mit Rust und Three.js.

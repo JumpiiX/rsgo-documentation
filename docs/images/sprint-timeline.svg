@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Timeline Basis -->
+  <line x1="50" y1="75" x2="550" y2="75" stroke="#333" stroke-width="2"/>
+  
+  <!-- Sprint 1 -->
+  <circle cx="130" cy="75" r="6" fill="#FF6B6B"/>
+  <text x="130" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Sprint 1</text>
+  <text x="130" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Februar 2026</text>
+  <text x="130" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FF6B6B">52 SP</text>
+  <text x="130" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Basic Gameplay</text>
+  
+  <!-- Sprint 1 User Stories -->
+  <rect x="50" y="130" width="160" height="120" fill="#FFF5F5" stroke="#FF6B6B" stroke-width="1" rx="3"/>
+  <text x="130" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold">User Stories</text>
+  <text x="55" y="160" font-family="Arial, sans-serif" font-size="7">• WebSocket-Verbindung (5 SP)</text>
+  <text x="55" y="170" font-family="Arial, sans-serif" font-size="7">• 3D-Spielwelt (8 SP)</text>
+  <text x="55" y="180" font-family="Arial, sans-serif" font-size="7">• First-Person-Kamera (5 SP)</text>
+  <text x="55" y="190" font-family="Arial, sans-serif" font-size="7">• WASD-Movement (8 SP)</text>
+  <text x="55" y="200" font-family="Arial, sans-serif" font-size="7">• Netzwerk-Sync (13 SP)</text>
+  <text x="55" y="210" font-family="Arial, sans-serif" font-size="7">• Spieler-Spawning (5 SP)</text>
+  <text x="55" y="220" font-family="Arial, sans-serif" font-size="7">• Andere Spieler anzeigen (8 SP)</text>
+  
+  <!-- Sprint 2 -->
+  <circle cx="300" cy="75" r="6" fill="#4ECDC4"/>
+  <text x="300" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Sprint 2</text>
+  <text x="300" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">März 2026</text>
+  <text x="300" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4ECDC4">54 SP</text>
+  <text x="300" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Combat Systems</text>
+  
+  <!-- Sprint 2 User Stories -->
+  <rect x="220" y="130" width="160" height="120" fill="#F0FFFE" stroke="#4ECDC4" stroke-width="1" rx="3"/>
+  <text x="300" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold">User Stories</text>
+  <text x="225" y="160" font-family="Arial, sans-serif" font-size="7">• Revolver-Waffe (5 SP)</text>
+  <text x="225" y="170" font-family="Arial, sans-serif" font-size="7">• Shooting-Mechanik (13 SP)</text>
+  <text x="225" y="180" font-family="Arial, sans-serif" font-size="7">• Hit-Detection (13 SP)</text>
+  <text x="225" y="190" font-family="Arial, sans-serif" font-size="7">• Health + Shield (5 SP)</text>
+  <text x="225" y="200" font-family="Arial, sans-serif" font-size="7">• Death + Respawn (8 SP)</text>
+  <text x="225" y="210" font-family="Arial, sans-serif" font-size="7">• Kill-Feed (5 SP)</text>
+  <text x="225" y="220" font-family="Arial, sans-serif" font-size="7">• HUD-Interface (5 SP)</text>
+  
+  <!-- Sprint 3 -->
+  <circle cx="470" cy="75" r="6" fill="#45B7D1"/>
+  <text x="470" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Sprint 3</text>
+  <text x="470" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">April 2026</text>
+  <text x="470" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#45B7D1">34 SP</text>
+  <text x="470" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="9">Docker + Performance</text>
+  
+  <!-- Sprint 3 User Stories -->
+  <rect x="390" y="130" width="160" height="120" fill="#F0F8FF" stroke="#45B7D1" stroke-width="1" rx="3"/>
+  <text x="470" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold">User Stories</text>
+  <text x="395" y="160" font-family="Arial, sans-serif" font-size="7">• Hetzner Server (3 SP)</text>
+  <text x="395" y="170" font-family="Arial, sans-serif" font-size="7">• Docker Setup (8 SP)</text>
+  <text x="395" y="180" font-family="Arial, sans-serif" font-size="7">• Server Deployment (5 SP)</text>
+  <text x="395" y="190" font-family="Arial, sans-serif" font-size="7">• Performance Opt (13 SP)</text>
+  <text x="395" y="200" font-family="Arial, sans-serif" font-size="7">• Auto Deployment (5 SP)</text>
+  
+  <!-- Story Points Verlauf -->
+  <path d="M 130 25 L 300 23 L 470 35" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="300" y="18" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Story Points Trend</text>
+</svg>
