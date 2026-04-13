@@ -189,7 +189,7 @@ Erstmal die Basics. Kann ich überhaupt eine 3D-Welt im Browser rendern? Funktio
 
 **Was fast schiefging:**
 
-Ich hab 3 Stunden damit verbracht, herauszufinden warum meine WebSocket-Connection instant disconnected. Der Fehler? Ich hab `ws://` statt `wss://` bei HTTPS verwendet. 🤦‍♂️
+Ich hab 3 Stunden damit verbracht, herauszufinden warum meine WebSocket-Connection instant disconnected. Der Fehler? Ich hab `ws://` statt `wss://` bei HTTPS verwendet.
 
 **Die Lösung:**
 ```javascript
@@ -290,9 +290,9 @@ Erst waren andere Spieler rote Würfel. Sah aus wie Minecraft. Dann Kapseln - sc
 
 ## Sprint 1 Review
 
-### Live-Demo Erfolg!
+### Erfolg!
 
-5 Browser-Tabs aufgemacht und... **ES FUNKTIONIERT!** Alle bewegen sich, alles synchronisiert, konstante 60 FPS.
+2 Browser-Tabs aufgemacht und... **ES FUNKTIONIERT!** Alle bewegen sich, alles synchronisiert, konstante 60 FPS.
 
 ### Performance-Metriken
 
@@ -608,7 +608,7 @@ let batch = GameStateBatch {
 send_batch(batch);
 ```
 
-**Resultat:** 50 Spieler getestet, läuft smooth wie Butter!
+**Resultat:** mehrere Spieler getestet, läuft smooth wie Butter!
 
 ### Docker Deployment auf Hetzner
 
@@ -696,7 +696,7 @@ Der Server läuft stabil auf Hetzner mit Docker-Deployment. Das experimentelle M
 
 ### Was ich gebaut habe
 
-Ein vollständiges Multiplayer-FPS im Browser. Mit Rust-Backend, Three.js Frontend, Docker Deployment. Es läuft, es macht Spass, und 70+ Leute können gleichzeitig spielen.
+Ein vollständiges Multiplayer-FPS im Browser. Mit Rust-Backend, Three.js Frontend, Docker Deployment. Es läuft, es macht Spass, und Leute können gleichzeitig spielen.
 
 ### Die wichtigsten Learnings
 
