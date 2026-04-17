@@ -1,0 +1,127 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 18px Arial; fill: #333; }
+    .column-title { font: bold 14px Arial; fill: #333; text-anchor: middle; }
+    .column-bg { fill: #f8f9fa; stroke: #dee2e6; stroke-width: 2; }
+    .card { fill: white; stroke: #dee2e6; stroke-width: 1; }
+    .card-text { font: 11px Arial; fill: #333; }
+    .arrow { stroke: #6c757d; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .label-high { fill: #dc3545; }
+    .label-medium { fill: #fd7e14; }
+    .label-low { fill: #28a745; }
+    .label-text { font: 9px Arial; fill: white; text-anchor: middle; }
+  </style>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">GitHub Projects Board Workflow</text>
+  
+  <!-- Columns -->
+  <!-- Backlog -->
+  <rect x="50" y="60" width="180" height="320" class="column-bg"/>
+  <text x="140" y="80" class="column-title">Backlog</text>
+  
+  <!-- Card 1 -->
+  <rect x="60" y="100" width="160" height="50" class="card"/>
+  <text x="70" y="115" class="card-text">Implement Physics Engine</text>
+  <rect x="70" y="125" width="40" height="15" class="label-low"/>
+  <text x="90" y="135" class="label-text">low</text>
+  <text x="120" y="135" class="card-text">8 SP</text>
+  
+  <!-- Card 2 -->
+  <rect x="60" y="160" width="160" height="50" class="card"/>
+  <text x="70" y="175" class="card-text">Audio System</text>
+  <rect x="70" y="185" width="50" height="15" class="label-medium"/>
+  <text x="95" y="195" class="label-text">medium</text>
+  <text x="130" y="195" class="card-text">5 SP</text>
+  
+  <!-- Todo -->
+  <rect x="250" y="60" width="180" height="320" class="column-bg"/>
+  <text x="340" y="80" class="column-title">Todo</text>
+  
+  <!-- Card 3 -->
+  <rect x="260" y="100" width="160" height="50" class="card"/>
+  <text x="270" y="115" class="card-text">WebSocket Performance</text>
+  <rect x="270" y="125" width="40" height="15" class="label-high"/>
+  <text x="290" y="135" class="label-text">high</text>
+  <text x="320" y="135" class="card-text">13 SP</text>
+  
+  <!-- Card 4 -->
+  <rect x="260" y="160" width="160" height="50" class="card"/>
+  <text x="270" y="175" class="card-text">Hit Detection Logic</text>
+  <rect x="270" y="185" width="40" height="15" class="label-high"/>
+  <text x="290" y="195" class="label-text">high</text>
+  <text x="320" y="195" class="card-text">13 SP</text>
+  
+  <!-- In Progress -->
+  <rect x="450" y="60" width="180" height="320" class="column-bg"/>
+  <text x="540" y="80" class="column-title">In Progress</text>
+  
+  <!-- Card 5 -->
+  <rect x="460" y="100" width="160" height="50" class="card"/>
+  <text x="470" y="115" class="card-text">Revolver 3D Model</text>
+  <rect x="470" y="125" width="50" height="15" class="label-medium"/>
+  <text x="495" y="135" class="label-text">medium</text>
+  <text x="530" y="135" class="card-text">5 SP</text>
+  
+  <!-- Testing -->
+  <rect x="650" y="60" width="180" height="320" class="column-bg"/>
+  <text x="740" y="80" class="column-title">Testing</text>
+  
+  <!-- Card 6 -->
+  <rect x="660" y="100" width="160" height="50" class="card"/>
+  <text x="670" y="115" class="card-text">Player Movement</text>
+  <rect x="670" y="125" width="40" height="15" class="label-high"/>
+  <text x="690" y="135" class="label-text">high</text>
+  <text x="720" y="135" class="card-text">8 SP</text>
+  
+  <!-- Done -->
+  <rect x="850" y="60" width="180" height="320" class="column-bg"/>
+  <text x="940" y="80" class="column-title">Done</text>
+  
+  <!-- Card 7 -->
+  <rect x="860" y="100" width="160" height="50" class="card"/>
+  <text x="870" y="115" class="card-text">Three.js Setup</text>
+  <rect x="870" y="125" width="40" height="15" class="label-high"/>
+  <text x="890" y="135" class="label-text">high</text>
+  <text x="920" y="135" class="card-text">8 SP</text>
+  
+  <!-- Card 8 -->
+  <rect x="860" y="160" width="160" height="50" class="card"/>
+  <text x="870" y="175" class="card-text">WebSocket Connection</text>
+  <rect x="870" y="185" width="40" height="15" class="label-high"/>
+  <text x="890" y="195" class="label-text">high</text>
+  <text x="920" y="195" class="card-text">5 SP</text>
+  
+  <!-- Card 9 -->
+  <rect x="860" y="220" width="160" height="50" class="card"/>
+  <text x="870" y="235" class="card-text">First Person Camera</text>
+  <rect x="870" y="245" width="50" height="15" class="label-medium"/>
+  <text x="895" y="255" class="label-text">medium</text>
+  <text x="930" y="255" class="card-text">5 SP</text>
+  
+  <!-- Arrows -->
+  <line x1="230" y1="200" x2="250" y2="200" class="arrow"/>
+  <line x1="430" y1="200" x2="450" y2="200" class="arrow"/>
+  <line x1="630" y1="200" x2="650" y2="200" class="arrow"/>
+  <line x1="830" y1="200" x2="850" y2="200" class="arrow"/>
+  
+  <!-- Process labels -->
+  <text x="240" y="240" text-anchor="middle" class="card-text">Sprint</text>
+  <text x="240" y="255" text-anchor="middle" class="card-text">Planning</text>
+  
+  <text x="440" y="240" text-anchor="middle" class="card-text">Daily</text>
+  <text x="440" y="255" text-anchor="middle" class="card-text">Work</text>
+  
+  <text x="640" y="240" text-anchor="middle" class="card-text">Code</text>
+  <text x="640" y="255" text-anchor="middle" class="card-text">Review</text>
+  
+  <text x="840" y="240" text-anchor="middle" class="card-text">Sprint</text>
+  <text x="840" y="255" text-anchor="middle" class="card-text">Review</text>
+</svg>

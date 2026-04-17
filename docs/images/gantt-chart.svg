@@ -1,0 +1,104 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 18px Arial; fill: #333; }
+    .section-title { font: bold 14px Arial; fill: #666; }
+    .task-text { font: 12px Arial; fill: #333; }
+    .task-bar { fill: #4CAF50; opacity: 0.8; }
+    .task-bar-critical { fill: #FF6B6B; opacity: 0.8; }
+    .task-bar-active { fill: #2196F3; opacity: 0.8; }
+    .grid-line { stroke: #ddd; stroke-width: 1; }
+    .axis-text { font: 11px Arial; fill: #666; }
+  </style>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">RSGO Projekt Gantt Chart</text>
+  
+  <!-- Time axis -->
+  <line x1="200" y1="60" x2="1150" y2="60" class="grid-line"/>
+  <text x="250" y="80" text-anchor="middle" class="axis-text">Feb 1</text>
+  <text x="350" y="80" text-anchor="middle" class="axis-text">Feb 15</text>
+  <text x="450" y="80" text-anchor="middle" class="axis-text">Mar 1</text>
+  <text x="550" y="80" text-anchor="middle" class="axis-text">Mar 15</text>
+  <text x="650" y="80" text-anchor="middle" class="axis-text">Apr 1</text>
+  <text x="750" y="80" text-anchor="middle" class="axis-text">Apr 15</text>
+  <text x="850" y="80" text-anchor="middle" class="axis-text">Apr 30</text>
+  
+  <!-- Sprint 1 Section -->
+  <text x="20" y="120" class="section-title">Sprint 1 - Foundation</text>
+  
+  <!-- Sprint 1 Tasks -->
+  <text x="50" y="140" class="task-text">Projektplanung & Setup</text>
+  <rect x="200" y="130" width="40" height="15" class="task-bar-active"/>
+  
+  <text x="50" y="160" class="task-text">WebSocket Verbindung</text>
+  <rect x="240" y="150" width="30" height="15" class="task-bar"/>
+  
+  <text x="50" y="180" class="task-text">3D Welt mit Three.js</text>
+  <rect x="270" y="170" width="40" height="15" class="task-bar"/>
+  
+  <text x="50" y="200" class="task-text">Movement & Kamera</text>
+  <rect x="310" y="190" width="60" height="15" class="task-bar"/>
+  
+  <text x="50" y="220" class="task-text">Multiplayer Sync</text>
+  <rect x="370" y="210" width="70" height="15" class="task-bar-critical"/>
+  
+  <text x="50" y="240" class="task-text">Testing & Bugfixes</text>
+  <rect x="440" y="230" width="30" height="15" class="task-bar"/>
+  
+  <!-- Sprint 2 Section -->
+  <text x="20" y="280" class="section-title">Sprint 2 - Combat</text>
+  
+  <!-- Sprint 2 Tasks -->
+  <text x="50" y="300" class="task-text">Combat System Design</text>
+  <rect x="470" y="290" width="40" height="15" class="task-bar"/>
+  
+  <text x="50" y="320" class="task-text">Revolver Implementation</text>
+  <rect x="510" y="310" width="50" height="15" class="task-bar"/>
+  
+  <text x="50" y="340" class="task-text">Hit Detection</text>
+  <rect x="560" y="330" width="80" height="15" class="task-bar-critical"/>
+  
+  <text x="50" y="360" class="task-text">Health & Respawn</text>
+  <rect x="640" y="350" width="40" height="15" class="task-bar"/>
+  
+  <text x="50" y="380" class="task-text">UI & Kill Feed</text>
+  <rect x="680" y="370" width="60" height="15" class="task-bar"/>
+  
+  <text x="50" y="400" class="task-text">Testing & Polish</text>
+  <rect x="740" y="390" width="30" height="15" class="task-bar"/>
+  
+  <!-- Sprint 3 Section -->
+  <text x="20" y="440" class="section-title">Sprint 3 - Deploy</text>
+  
+  <!-- Sprint 3 Tasks -->
+  <text x="50" y="460" class="task-text">Docker Setup</text>
+  <rect x="770" y="450" width="40" height="15" class="task-bar"/>
+  
+  <text x="50" y="480" class="task-text">Server Deployment</text>
+  <rect x="810" y="470" width="50" height="15" class="task-bar"/>
+  
+  <text x="50" y="500" class="task-text">Performance Optimization</text>
+  <rect x="860" y="490" width="50" height="15" class="task-bar"/>
+  
+  <text x="50" y="520" class="task-text">Documentation</text>
+  <rect x="910" y="510" width="50" height="15" class="task-bar"/>
+  
+  <!-- Grid lines -->
+  <line x1="200" y1="60" x2="200" y2="550" class="grid-line"/>
+  <line x1="300" y1="60" x2="300" y2="550" class="grid-line"/>
+  <line x1="400" y1="60" x2="400" y2="550" class="grid-line"/>
+  <line x1="500" y1="60" x2="500" y2="550" class="grid-line"/>
+  <line x1="600" y1="60" x2="600" y2="550" class="grid-line"/>
+  <line x1="700" y1="60" x2="700" y2="550" class="grid-line"/>
+  <line x1="800" y1="60" x2="800" y2="550" class="grid-line"/>
+  <line x1="900" y1="60" x2="900" y2="550" class="grid-line"/>
+  
+  <!-- Legend -->
+  <text x="1000" y="120" class="task-text">Legende:</text>
+  <rect x="1000" y="130" width="20" height="10" class="task-bar"/>
+  <text x="1025" y="140" class="task-text">Normal</text>
+  <rect x="1000" y="150" width="20" height="10" class="task-bar-critical"/>
+  <text x="1025" y="160" class="task-text">Kritisch</text>
+  <rect x="1000" y="170" width="20" height="10" class="task-bar-active"/>
+  <text x="1025" y="180" class="task-text">Aktiv</text>
+</svg>

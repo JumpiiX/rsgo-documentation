@@ -51,6 +51,58 @@ $$
 
 ---
 
+## Projektmanagement
+
+### Risk Matrix
+
+![Risk Matrix](docs/images/risk-matrix.svg)
+
+| Risiko | Wahrscheinlichkeit | Impact | Mitigation Strategy |
+|--------|-------------------|--------|-------------------|
+| **WebSocket Performance** | Hoch | Hoch | Message Batching, 20Hz Tickrate |
+| **Browser-Kompatibilität** | Hoch | Mittel | Progressive Enhancement, Fallbacks |
+| **Server-Kosten** | Hoch | Mittel | Optimierte Resource Usage |
+| **Hit-Detection Latenz** | Mittel | Hoch | Lag Compensation implementiert |
+| **Docker Deployment** | Mittel | Hoch | Multi-stage builds, Documentation |
+| **3D Performance** | Mittel | Mittel | LOD, Frustum Culling |
+| **Sync Bugs** | Mittel | Mittel | Extensive Testing |
+| **UI Iterationen** | Niedrig | Niedrig | Agile Approach |
+
+### SWOT Analyse
+
+![SWOT Analyse](docs/images/swot-analysis.svg)
+
+| Kategorie | Details |
+|-----------|---------|
+| **Strengths** | Rust für hohe Performance<br>Moderne Web-Technologien<br>Plattformübergreifend im Browser<br>Agile Entwicklung mit Sprints |
+| **Weaknesses** | Begrenzte Gaming-Erfahrung<br>Einzelentwickler - keine Spezialisierung<br>Keine professionellen Art/Design-Skills<br>Limitiertes Budget für Assets |
+| **Opportunities** | Wachsender Web-Gaming Markt<br>WebAssembly für bessere Performance<br>Mobile Browser Gaming Trend<br>Educational Gaming Content |
+| **Threats** | Konkurrenz durch native Games<br>Browser Performance Limitierungen<br>Netzwerk-Latenz Probleme<br>Sich ändernde Web-Standards |
+
+### Arbeitsweise mit GitHub Projects Board
+
+
+#### Board-Struktur und Workflow
+
+![GitHub Board Workflow](docs/images/github-board-workflow.svg)
+
+#### Priorisierung
+
+| Priorität | Beschreibung | Beispiele |
+|-----------|--------------|-----------|
+| **Must Have** | Kritisch für Sprint-Ziel | WebSocket Connection, Hit Detection |
+| **Nice to Have** | Features für zukünftige Sprints | Sound Effects, Multiple Maps |
+
+
+#### Sprint Planning Prozess
+
+1. **Backlog Refinement:** Issues werden geschätzt (Story Points: 1, 2, 3, 5, 8, 13)
+2. **Sprint Planning:** Auswahl der Issues basierend auf Priorität und Kapazität
+3. **Daily Updates:** Board wird täglich aktualisiert
+4. **Sprint Review:** Abgeschlossene Issues werden auf "Done" gesetzt
+
+---
+
 ## Einführung
 
 Nach meiner SmartHome-Bridge wollte ich ein Projekt mit völlig anderen technischen Herausforderungen. Als Lernprojekt entschied ich mich für ein Browser-basiertes Multiplayer-Spiel.
@@ -155,6 +207,10 @@ Für reproduzierbare Deployments und einfache Bereitstellung.
 | **Sprint 2** | März 2026 | 54 | Combat System - Shooting & Respawn |
 | **Sprint 3** | April 2026 | 34 | Docker & Performance für 20+ Spieler |
 
+### Gantt Chart - Projektplanung
+
+![Gantt Chart](docs/images/gantt-chart.svg)
+
 ---
 
 # Sprint 1: Basic Gameplay Foundation (Februar 2026)
@@ -180,6 +236,10 @@ Erstmal die Basics. Kann ich überhaupt eine 3D-Welt im Browser rendern? Funktio
 | Andere Spieler anzeigen | Must-Have | 8 | Erledigt |
 
 **Total: 52 Story Points**
+
+### Burndown Chart Sprint 1
+
+![Sprint 1 Burndown](docs/images/burndown-sprint1.svg)
 
 ---
 
@@ -362,6 +422,10 @@ Ein Revolver, Headshots, Kill-Feed - das volle FPS-Feeling. Aber alles im Browse
 | HUD-Interface | Must-Have | 5 | Erledigt |
 
 **Total: 54 Story Points**
+
+### Burndown Chart Sprint 2
+
+![Sprint 2 Burndown](docs/images/burndown-sprint2.svg)
 
 ---
 
@@ -550,6 +614,10 @@ Nach zwei Sprints Development ist es Zeit für Production. Docker-Container baue
 
 **Total: 34 Story Points**
 
+### Burndown Chart Sprint 3
+
+![Sprint 3 Burndown](docs/images/burndown-sprint3.svg)
+
 ---
 
 ## Sprint 3 Durchführung
@@ -721,6 +789,154 @@ Ein vollständiges Multiplayer-FPS im Browser. Mit Rust-Backend, Three.js Fronte
 | Average FPS | Stabil |
 | Server Kosten | 5€/Monat |
 
-**Fazit:** Das experimentelle Projekt zeigt, dass Browser-basierte Multiplayer-Games mit modernen Web-Technologien umsetzbar sind. 
+**Fazit:** Das experimentelle Projekt zeigt, dass browserbasierte Multiplayer-Games mit modernen Web-Technologien umsetzbar sind. 
 
 **RSGO** - Ein Schulprojekt zur Erforschung von Game-Mechaniken mit Rust und Three.js.
+
+---
+
+## Meine persönliche Reflexion
+
+### It's not hard, it's just new
+
+Das ist die wichtigste Erkenntnis aus diesem Projekt. Am Anfang dachte ich: "Boah, ein Multiplayer-Game im Browser? Das schaffe ich niemals! WebSockets, Networking, 3D-Graphics - alles auf einmal?" Die ersten Tage waren überwältigend. So viele neue Konzepte, so viel unbekanntes Terrain.
+
+Aber jetzt, nachdem ich es geschafft habe, denke ich zurück und merke: Es war gar nicht so schwer - es war einfach neu. Sobald man die Grundkonzepte versteht, fügt sich alles zusammen. WebSocket-Kommunikation ist im Grunde nur Messages hin und her schicken. Three.js macht 3D-Darstellung super einfach. Und Rust - das konnte ich ja schon vorher gut.
+
+### Was ich wirklich gelernt habe
+
+**WebSockets sind magisch:** Die Kommunikation zwischen Frontend und Backend in Echtzeit zu sehen war ein Aha-Moment. Spieler bewegen sich, schiessen, treffen - alles synchronisiert über simple Messages. Keine Hexerei, nur gut strukturierte Kommunikation.
+
+**Docker Deployment rockt:** Das war komplett neu für mich. Container bauen, Images pushen, auf dem Server deployen - am Anfang verwirrend, aber dann macht es total Sinn. Einmal verstanden, ist es super praktisch.
+
+**Three.js war ein alter Freund:** Das kannte ich schon von früheren Projekten und es hat mich nicht enttäuscht. Die Performance im Browser ist beeindruckend. 3D-Gaming im Browser ist definitiv möglich!
+
+**Rust bleibt mein Favorit:** Die Sprache kannte ich schon gut und sie hat sich wieder bewährt. Performance, Safety, tolles Async-System - perfekt für Game-Server.
+
+### Browser können mehr als man denkt
+
+Eine der größten Überraschungen war, wie gut moderne Browser mit Gaming umgehen können. Ich hatte ehrlich gesagt Zweifel, ob das Performance-mäßig funktionieren würde. Aber mehrere Spieler gleichzeitig, stabile FPS, responsive Controls - alles lief butterweich.
+
+Das hat mir gezeigt: Man sollte Technologien nicht unterschätzen. Browser sind heute viel mächtiger als vor ein paar Jahren. Web-Gaming ist nicht nur ein Gimmick, es ist eine echte Alternative.
+
+### Die wichtigste Lektion: Anfangen ist alles
+
+Das Projekt hat mir gezeigt, dass der größte Feind der Completion die Perfektion ist. Ich hätte monatelang planen können, aber stattdessen habe ich einfach angefangen. Sprint für Sprint, Feature für Feature. Und plötzlich hatte ich ein funktionierendes Game.
+
+**Multiplayer-Networking** war für mich komplett neu. WebSockets, Server-Client-Kommunikation, State-Synchronisation - alles Fremdwörter am Anfang. Aber durch Learning by Doing wurde es schnell klar. Jede Spieler-Aktion wird als simple Message übertragen - viel einfacher als gedacht.
+
+**Docker und Deployment** waren auch Neuland. Container, Images, Server-Setup - ich dachte, das wäre mega kompliziert. Aber auch hier: Es sieht schwieriger aus als es ist. Einmal den Workflow verstanden, ist es ziemlich straightforward.
+
+### Was bleibt hängen
+
+Am Ende bin ich stolz auf das, was entstanden ist. Es ist vielleicht kein AAA-Game, aber es ist MEIN Game. Von der ersten Zeile Code bis zum Live-Deployment auf dem Server. Das Gefühl, wenn das erste Mal zwei Spieler gleichzeitig in der Welt rumlaufen und aufeinander schießen - unbezahlbar.
+
+Die größte Erkenntnis: **It's not hard, it's just new.** Das werde ich mitnehmen für zukünftige Projekte.
+
+### Projektmanagement Reflexion
+
+#### Agile Entwicklung als Einzelperson
+
+**Sprint-Struktur funktionierte:**
+Die 4-Wochen Sprints mit klaren Zielen halfen beim Fokus. Jeder Sprint hatte ein demonstrierbares Ergebnis, was motivierend wirkte.
+
+**Story Point Schätzung:**
+- **Sprint 1:** 52 Points - gut geschätzt
+- **Sprint 2:** 54 Points - Hit-Detection war unterschätzt (13 statt 8 Points)
+- **Sprint 3:** 34 Points - Docker war einfacher als gedacht
+
+**GitHub Projects Board:**
+Das Board mit "Backlog → Todo → In Progress → Testing → Done" funktionierte auch als Einzelentwickler. Die Visualisierung half beim Tracking des Fortschritts.
+
+#### Risikomanagement
+
+**Erfolgreich mitigierte Risiken:**
+- **WebSocket Performance:** Direkte Event-Übertragung funktionierte problemlos
+- **Hit-Detection System:** Server-seitige Validierung implementiert
+- **Browser Compatibility:** Funktioniert in allen modernen Browsern
+
+**Unterschätzte Risiken:**
+- **Debugging Complexity:** Multiplayer-Bugs waren schwerer zu reproduzieren
+- **Asset Quality:** Gratis 3D-Models brauchen mehr Nachbearbeitung
+
+### Learnings und Erkenntnisse
+
+#### Was ich dabei gelernt habe
+
+**Browser sind mächtiger als gedacht:** Moderne Browser schaffen problemlos 3D-Gaming mit mehreren Spielern. Meine Performance-Bedenken waren völlig unbegründet.
+
+**Einfach ist oft besser:** Statt komplexer Optimierungen reichte eine simple WebSocket-Architektur vollkommen aus. Jede Aktion wird direkt übertragen - funktioniert einwandfrei.
+
+**Server-Authority ist unverzichtbar:** Der Server muss alle Spieler-Aktionen validieren, sonst wird guaranteed gecheatet. Das war eine wichtige Erkenntnis für Fair-Play.
+
+#### Projektmanagement Erkenntnisse
+
+**MVP zuerst:** Das spielbare Minimum in Sprint 1 war entscheidend für die Motivation. Zu sehen, dass es funktioniert, hat mega gepusht.
+
+**Unbekanntes braucht Zeit:** Neue Technologien wie Multiplayer-Networking brauchen Exploration Time. Nicht unterschätzen!
+
+**Früh testen:** Tests mit echten Spielern bringen viel mehr als Solo-Development. Hätte ich früher machen sollen.
+
+### Zukunftsausblick und Verbesserungen
+
+#### Kurzfristige Verbesserungen (nächste 3 Monate)
+
+**Gameplay Features:**
+- **Weitere Waffen:** Shotgun mit Spread-Pattern, Sniper mit Scope
+- **Map Variety:** Mindestens 3 verschiedene Arenas
+- **Game Modes:** Team Deathmatch, Capture the Flag
+
+**Performance Optimierungen:**
+Zukünftige Verbesserungen könnten Spatial Hashing für effizientere Hit-Detection verwenden, um die Skalierung auf noch mehr Spieler zu ermöglichen.
+
+**User Experience:**
+- **Responsive UI:** Mobile-friendly Interface
+- **Spectator Mode:** Zusehen nach dem Tod
+- **Statistics:** Detaillierte K/D Ratio, Accuracy Tracking
+
+#### Mittelfristige Entwicklung (6-12 Monate)
+
+**Technische Skalierung:**
+- **WebAssembly Integration:** Kritische Game-Logic in WASM für bessere Performance
+- **CDN Distribution:** Globale Server für niedrigere Latenz
+- **Database Integration:** Persistent Player Profiles und Statistics
+
+**Advanced Features:**
+- **Physics Engine:** Bullet drop, ricochet effects
+- **Audio System:** 3D-Audio für Immersion
+- **Anti-Cheat:** Server-side validation improvements
+
+#### Langfristige Vision (1-2 Jahre)
+
+**Monetarisierung Exploration:**
+- **Cosmetic Items:** Weapon Skins, Player Customization
+- **Battle Pass System:** Progressive Unlocks
+- **Tournament Mode:** Competitive Gaming Features
+
+**Technology Evolution:**
+- **WebGPU Migration:** Bessere Graphics Performance wenn Browser-Support verfügbar
+- **Real-time Ray Tracing:** Experimentelle Graphics Features
+- **AI Integration:** Smart Bots, Matchmaking Algorithms
+
+#### Potential für Diplomarbeit
+
+Dieses Projekt bietet mehrere Erweiterungsrichtungen für eine Diplomarbeit:
+
+1. **Performance Research:** Vergleichende Studie Browser vs. Native Gaming Performance
+2. **Network Optimization:** Advanced Lag Compensation und Prediction Algorithmen
+3. **Scalability Study:** Microservices Architecture für Massive Multiplayer
+4. **AI Integration:** Machine Learning für Cheat Detection oder Matchmaking
+
+### Fazit der Reflexion
+
+Das RSGO Projekt demonstrierte erfolgreich, dass browser-basierte Multiplayer-Games mit modernen Web-Technologien möglich sind. Die Kombination aus Rust-Backend und Three.js Frontend bietet eine solide Foundation für weitere Entwicklung.
+
+**Key Success Factors:**
+- Agile Entwicklung mit klaren Sprint-Zielen
+- Frühe Performance-Tests mit echten Spielern
+- Fokus auf Core Gameplay statt Feature-Creep
+- Technische Fundamente (Server Authority, Lag Compensation)
+
+**Wichtigste Erkenntnis:** Browser-Gaming hat genügend Potential für ernsthafte Game Development, besonders für Casual Multiplayer Experiences.
+
+Das Projekt erfüllte alle ursprünglichen Ziele und lieferte wertvolle Erkenntnisse für zukünftige Web-Gaming Projekte.

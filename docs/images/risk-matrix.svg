@@ -1,0 +1,94 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 18px Arial; fill: #333; }
+    .axis-title { font: bold 14px Arial; fill: #333; }
+    .axis-text { font: 12px Arial; fill: #666; }
+    .risk-text { font: 10px Arial; fill: white; font-weight: bold; }
+    .high-risk { fill: #FF5252; stroke: #D32F2F; stroke-width: 2; }
+    .medium-risk { fill: #FF9800; stroke: #F57C00; stroke-width: 2; }
+    .low-risk { fill: #4CAF50; stroke: #388E3C; stroke-width: 2; }
+    .grid-line { stroke: #ddd; stroke-width: 1; }
+    .axis-line { stroke: #333; stroke-width: 2; }
+  </style>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" class="title">RSGO Projekt Risk Matrix</text>
+  
+  <!-- Axes -->
+  <line x1="100" y1="500" x2="800" y2="500" class="axis-line"/>
+  <line x1="100" y1="500" x2="100" y2="100" class="axis-line"/>
+  
+  <!-- Grid -->
+  <line x1="100" y1="400" x2="800" y2="400" class="grid-line"/>
+  <line x1="100" y1="300" x2="800" y2="300" class="grid-line"/>
+  <line x1="100" y1="200" x2="800" y2="200" class="grid-line"/>
+  <line x1="300" y1="100" x2="300" y2="500" class="grid-line"/>
+  <line x1="500" y1="100" x2="500" y2="500" class="grid-line"/>
+  <line x1="700" y1="100" x2="700" y2="500" class="grid-line"/>
+  
+  <!-- Axis labels -->
+  <text x="450" y="540" text-anchor="middle" class="axis-title">Wahrscheinlichkeit</text>
+  <text x="50" y="300" text-anchor="middle" class="axis-title" transform="rotate(-90 50 300)">Impact</text>
+  
+  <!-- X-axis labels -->
+  <text x="200" y="520" text-anchor="middle" class="axis-text">Niedrig</text>
+  <text x="400" y="520" text-anchor="middle" class="axis-text">Mittel</text>
+  <text x="600" y="520" text-anchor="middle" class="axis-text">Hoch</text>
+  
+  <!-- Y-axis labels -->
+  <text x="90" y="455" text-anchor="end" class="axis-text">Niedrig</text>
+  <text x="90" y="355" text-anchor="end" class="axis-text">Mittel</text>
+  <text x="90" y="255" text-anchor="end" class="axis-text">Hoch</text>
+  <text x="90" y="155" text-anchor="end" class="axis-text">Sehr Hoch</text>
+  
+  <!-- Risk items -->
+  
+  <!-- High/High -->
+  <rect x="500" y="100" width="200" height="100" class="high-risk"/>
+  <text x="600" y="135" text-anchor="middle" class="risk-text">WebSocket Performance</text>
+  <text x="600" y="150" text-anchor="middle" class="risk-text">bei vielen Spielern</text>
+  
+  <!-- High/Medium -->
+  <rect x="500" y="200" width="200" height="100" class="medium-risk"/>
+  <text x="600" y="235" text-anchor="middle" class="risk-text">Browser-Kompatibilität</text>
+  <text x="600" y="250" text-anchor="middle" class="risk-text">Three.js</text>
+  
+  <rect x="500" y="300" width="200" height="100" class="medium-risk"/>
+  <text x="600" y="335" text-anchor="middle" class="risk-text">Server-Kosten</text>
+  <text x="600" y="350" text-anchor="middle" class="risk-text">bei Skalierung</text>
+  
+  <!-- Medium/High -->
+  <rect x="300" y="100" width="200" height="100" class="high-risk"/>
+  <text x="400" y="135" text-anchor="middle" class="risk-text">Hit-Detection</text>
+  <text x="400" y="150" text-anchor="middle" class="risk-text">Latenz-Probleme</text>
+  
+  <rect x="300" y="200" width="200" height="100" class="high-risk"/>
+  <text x="400" y="235" text-anchor="middle" class="risk-text">Docker Deployment</text>
+  <text x="400" y="250" text-anchor="middle" class="risk-text">Komplexität</text>
+  
+  <!-- Medium/Medium -->
+  <rect x="300" y="300" width="200" height="100" class="medium-risk"/>
+  <text x="400" y="335" text-anchor="middle" class="risk-text">3D-Model Loading</text>
+  <text x="400" y="350" text-anchor="middle" class="risk-text">Performance</text>
+  
+  <rect x="300" y="400" width="200" height="100" class="medium-risk"/>
+  <text x="400" y="435" text-anchor="middle" class="risk-text">Multiplayer</text>
+  <text x="400" y="450" text-anchor="middle" class="risk-text">Sync Bugs</text>
+  
+  <!-- Low/Low -->
+  <rect x="100" y="400" width="200" height="100" class="low-risk"/>
+  <text x="200" y="435" text-anchor="middle" class="risk-text">UI/UX Design</text>
+  <text x="200" y="450" text-anchor="middle" class="risk-text">Iterationen</text>
+  
+  <!-- Legend -->
+  <text x="750" y="150" class="axis-text">Risiko-Level:</text>
+  
+  <rect x="750" y="160" width="20" height="20" class="high-risk"/>
+  <text x="775" y="175" class="axis-text">Hoch</text>
+  
+  <rect x="750" y="185" width="20" height="20" class="medium-risk"/>
+  <text x="775" y="200" class="axis-text">Mittel</text>
+  
+  <rect x="750" y="210" width="20" height="20" class="low-risk"/>
+  <text x="775" y="225" class="axis-text">Niedrig</text>
+</svg>
