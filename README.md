@@ -59,7 +59,7 @@ $$
 
 | Risiko | Wahrscheinlichkeit | Impact | Mitigation Strategy |
 |--------|-------------------|--------|-------------------|
-| **WebSocket Performance** | Hoch | Hoch | Message Batching, 20Hz Tickrate |
+| **WebSocket Performance** | Hoch | Hoch | Einfache Event-Übertragung |
 | **Browser-Kompatibilität** | Hoch | Mittel | Progressive Enhancement, Fallbacks |
 | **Server-Kosten** | Hoch | Mittel | Optimierte Resource Usage |
 | **Hit-Detection Latenz** | Mittel | Hoch | Lag Compensation implementiert |
@@ -657,26 +657,9 @@ Image-Size: **Nur 45MB!** Rust compiled zu tiny binaries.
 
 ### Performance-Optimierung für 20+ Spieler
 
-**Das Problem bei 25+ Spielern:**
+**Performance bei mehreren Spielern:**
 
-CPU war nur bei 40%, aber es gab Micro-Lags. Nach Profiling: Too many kleine Messages!
-
-**Die Lösung - Message Batching:**
-```rust
-// Vorher: Jede Position einzeln senden
-for player in players {
-    send_position_update(player);
-}
-
-// Nachher: Alle Positionen in einem Batch
-let batch = GameStateBatch {
-    tick: current_tick,
-    players: players.collect(),
-};
-send_batch(batch);
-```
-
-**Resultat:** mehrere Spieler getestet, läuft smooth wie Butter!
+Das Game wurde erfolgreich mit mehreren Spielern getestet. Die einfache WebSocket-Architektur erwies sich als vollkommen ausreichend für das Gameplay.
 
 ### Docker Deployment auf Hetzner
 
@@ -729,14 +712,14 @@ Server läuft stabil mit Docker-Setup.
 ### Was lief perfect
 
 - Docker macht Deployment zum Kinderspiel
-- Message-Batching war der Performance Game-Changer  
+- Einfache WebSocket-Architektur funktionierte perfekt  
 - Erfolgreiche Multiplayer-Tests
 - Hetzner Server für 5€ reicht locker
 
 ### Challenges
 
 - Firewall-Config vergessen (klassiker)
-- Message-Batching brauchte viel Refactoring
+- WebSocket-Performance Optimierung
 - Docker Multi-Stage Build für Rust war neu für mich
 
 ### Learnings
@@ -879,8 +862,6 @@ Das Board mit "Backlog → Todo → In Progress → Testing → Done" funktionie
 
 ### Zukunftsausblick und Verbesserungen
 
-#### Kurzfristige Verbesserungen (nächste 3 Monate)
-
 **Gameplay Features:**
 - **Weitere Waffen:** Shotgun mit Spread-Pattern, Sniper mit Scope
 - **Map Variety:** Mindestens 3 verschiedene Arenas
@@ -893,39 +874,6 @@ Zukünftige Verbesserungen könnten Spatial Hashing für effizientere Hit-Detect
 - **Responsive UI:** Mobile-friendly Interface
 - **Spectator Mode:** Zusehen nach dem Tod
 - **Statistics:** Detaillierte K/D Ratio, Accuracy Tracking
-
-#### Mittelfristige Entwicklung (6-12 Monate)
-
-**Technische Skalierung:**
-- **WebAssembly Integration:** Kritische Game-Logic in WASM für bessere Performance
-- **CDN Distribution:** Globale Server für niedrigere Latenz
-- **Database Integration:** Persistent Player Profiles und Statistics
-
-**Advanced Features:**
-- **Physics Engine:** Bullet drop, ricochet effects
-- **Audio System:** 3D-Audio für Immersion
-- **Anti-Cheat:** Server-side validation improvements
-
-#### Langfristige Vision (1-2 Jahre)
-
-**Monetarisierung Exploration:**
-- **Cosmetic Items:** Weapon Skins, Player Customization
-- **Battle Pass System:** Progressive Unlocks
-- **Tournament Mode:** Competitive Gaming Features
-
-**Technology Evolution:**
-- **WebGPU Migration:** Bessere Graphics Performance wenn Browser-Support verfügbar
-- **Real-time Ray Tracing:** Experimentelle Graphics Features
-- **AI Integration:** Smart Bots, Matchmaking Algorithms
-
-#### Potential für Diplomarbeit
-
-Dieses Projekt bietet mehrere Erweiterungsrichtungen für eine Diplomarbeit:
-
-1. **Performance Research:** Vergleichende Studie Browser vs. Native Gaming Performance
-2. **Network Optimization:** Advanced Lag Compensation und Prediction Algorithmen
-3. **Scalability Study:** Microservices Architecture für Massive Multiplayer
-4. **AI Integration:** Machine Learning für Cheat Detection oder Matchmaking
 
 ### Fazit der Reflexion
 
